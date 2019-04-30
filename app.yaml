@@ -1,0 +1,16 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /flayway/
+  script: index.html
+
+- url: /flayway/css/.*
+  static_dir: style.css
+
+- url: /flayway/(.*\.(gif|png|jpg|svg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg|svg)$
+
+- url: /flayway/contactform/.*
+  script: contactform.php
